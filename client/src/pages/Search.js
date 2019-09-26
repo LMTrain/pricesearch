@@ -61,27 +61,25 @@ class Search extends Component {
     const book = this.state.books.find((book) => book.id === id);
     console.log('fav Book', book)
     this.setState({showBook: [book], showBookState: false})
-    let bookId = String(book.id)    
-    let bookTitle = String(book.volumeInfo.title)    
-    let bookAuthors = String(book.volumeInfo.authors)
-    let bookLink = String(book.volumeInfo.infoLink)
-    let bookThumbnail = String(book.volumeInfo.imageLinks.thumbnail)
-    let bookDescription = String(book.volumeInfo.description)
-    let bookNote = ""
-    let bookDate = String(book.volumeInfo.publishedDate)
+    let itemId = String(book.id)    
+    let itemName = String(book.volumeInfo.title)    
+    let itemPrice = 11.50
+    let itemLink = String(book.volumeInfo.infoLink)
+    let itemThumbnail = String(book.volumeInfo.imageLinks.thumbnail)
+    let itemDescription = String(book.volumeInfo.description)
+    let itemRating = String(book.volumeInfo.publishedDate)
     
     
 
     API.saveBook({
 
-      bookid: bookId,
-      title: bookTitle,
-      authors: bookAuthors,
-      link: bookLink,
-      thumbnail: bookThumbnail,
-      description: bookDescription,
-      note: bookNote,
-      publisheddate: bookDate,
+      itemId: itemId,
+      item: itemName,
+      authors: itemPrice,
+      link: itemLink,
+      thumbnail: itemThumbnail,
+      description: itemDescription,      
+      customerRating: itemRating,
     })
       .then(res => {console.log(res)})
       .catch(err => console.log(err));  
