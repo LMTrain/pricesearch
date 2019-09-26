@@ -6,7 +6,7 @@ const APIKEY = process.env.REACT_APP_APIKEY
 
 export default { 
   search: function(query) {
-    return axios.get(BASEURL + query + APIKEY);
+    return axios.get(BASEURL + APIKEY + query + "&format=json");
   },
   
   searchId: function(keyId) {
